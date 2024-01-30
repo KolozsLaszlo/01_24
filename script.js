@@ -1,16 +1,15 @@
 let button = document.querySelector("#button");
 let eredmeny = document.querySelector("#eredmeny");
+let emailInput = document.querySelector("#check")
 
 button.addEventListener("click", () => {
-  if (document.querySelector("#check").value != "alma@a.a") {
-    // console.log("Helytelen");
-    eredmeny.classList.remove("jo");
-    eredmeny.innerHTML = "Helytelen a megadott email cím!";
-    eredmeny.classList.add("rossz");
-  } else {
-    // console.log("Helyes");
-    eredmeny.classList.remove("rossz");
-    eredmeny.innerHTML = "Helyes a megadott email";
-    eredmeny.classList.add("jo");
-  }
+console.log(emailInput.value)
+
+  var mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+  
+if(emailInput.value.match(mailformat)){
+eredmeny.innerHTML = "Jó cím"
+}else{
+eredmeny.innerHTML = "Rossz cím"
+}
 });
